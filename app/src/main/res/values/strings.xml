@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Restaurants</string>
+    <string name="email_address">Enter email</string>
+    <string name="enter_password">Enter password</string>
+    <string name="signIn">Sign In</string>
+    <string name="login_msg">Please enter your email and password below to start using app.</string>
+    <string name="login_welcome_msg">Welcome to RestaurantsApp</string>
+    <string name="join_now">Join now</string>
+    <string name="not_a_member">Not a member?</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forgot password?</string>
 </resources>

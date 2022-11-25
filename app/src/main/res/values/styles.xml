@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Buttons" parent="ThemeOverlay.Material3.Button">
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">@drawable/borders</item>
+        <item name="backgroundTint">@color/orange</item>
+    </style>
+</resources>
