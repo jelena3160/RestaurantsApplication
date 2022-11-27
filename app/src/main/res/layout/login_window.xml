@@ -75,26 +75,18 @@
         app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
     <TextView
-        android:id="@+id/tvLoginMsg"
-        android:layout_width="270dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/login_msg"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/etEmail"
-        app:layout_constraintStart_toStartOf="@+id/etEmail" />
-
-    <TextView
         android:id="@+id/tvWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
         android:text="@string/login_welcome_msg"
-        android:textSize="24sp"
-        android:textStyle="bold"
         android:textColor="@color/secondaryColor"
-        app:layout_constraintBottom_toTopOf="@+id/tvLoginMsg"
-        app:layout_constraintStart_toStartOf="@+id/tvLoginMsg" />
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/etEmail"
+        app:layout_constraintEnd_toEndOf="@+id/etEmail"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/etEmail" />
 
     <TextView
         android:id="@+id/tvRegisterCheck"

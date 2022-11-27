@@ -9,4 +9,9 @@
     <string name="not_a_member">Not a member?</string>
     <string name="remember_me">Remember me</string>
     <string name="forgot_password">Forgot password?</string>
+    <string name="create_a_new_account">Create a new account</string>
+    <string name="repeat_password">Repeat password</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="register_now">Register now</string>
+    <string name="logo">logo</string>
 </resources>
