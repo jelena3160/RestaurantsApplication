@@ -100,24 +100,25 @@
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
     <TextView
+        android:id="@+id/tvJoinNow"
         android:layout_width="230dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="170dp"
-        android:text="@string/join_now"
-        android:textSize="16sp"
-        android:textColor="@color/orange"
-        android:textStyle="italic"
+        android:layout_height="48dp"
+        android:layout_marginStart="168dp"
         android:clickable="true"
         android:focusable="true"
+        android:text="@string/join_now"
+        android:textColor="@color/orange"
+        android:textSize="16sp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/tvRegisterCheck"
         app:layout_constraintStart_toStartOf="@+id/tvRegisterCheck"
         app:layout_constraintTop_toTopOf="@+id/tvRegisterCheck"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="131dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:text="@string/remember_me"
         app:layout_constraintStart_toStartOf="@+id/etPassword"
         app:layout_constraintTop_toBottomOf="@+id/etPassword" />
@@ -125,13 +126,13 @@
     <TextView
         android:id="@+id/textView4"
         android:layout_width="131dp"
-        android:layout_height="35dp"
-        android:text="@string/forgot_password"
-        android:textColor="@color/orange"
-        android:textAlignment="textEnd"
-        android:padding="7dp"
+        android:layout_height="48dp"
         android:clickable="true"
         android:focusable="true"
+        android:padding="13dp"
+        android:text="@string/forgot_password"
+        android:textAlignment="textEnd"
+        android:textColor="@color/orange"
         app:layout_constraintEnd_toEndOf="@+id/etPassword"
         app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 </androidx.constraintlayout.widget.ConstraintLayout>
