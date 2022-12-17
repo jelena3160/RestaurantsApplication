@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/btnLogout"
+        style="@style/Buttons"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="@string/logout"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/etEmailAbout"
+        app:layout_constraintStart_toStartOf="@+id/etEmailAbout"
+        app:layout_constraintTop_toBottomOf="@+id/etEmailAbout"
+        tools:ignore="TextContrastCheck" />
+
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/iProfilePic"
         android:layout_width="148dp"
         android:layout_height="196dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -15,14 +29,70 @@
         android:contentDescription="@string/profile_picture" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/iAddProfilePic"
         android:layout_width="48dp"
         android:layout_height="46dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/iProfilePic"
+        app:layout_constraintEnd_toEndOf="@+id/iProfilePic"
         app:srcCompat="@drawable/addprofilepicture"
         android:contentDescription="@string/profile_picture" />
+
+    <EditText
+        android:id="@+id/etNameAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="@string/first_name"
+        android:hint="@string/first_name"
+        android:autofillHints="name"
+        android:textAlignment="center"
+        android:drawableEnd="@drawable/marker"
+        app:layout_constraintEnd_toEndOf="@+id/iProfilePic"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="@+id/iProfilePic"
+        app:layout_constraintTop_toBottomOf="@+id/iProfilePic" />
+
+    <EditText
+        android:id="@+id/etLastNameAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:autofillHints="name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="@string/last_name"
+        android:hint="@string/last_name"
+        android:drawableEnd="@drawable/marker"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/etNameAbout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/etNameAbout"
+        app:layout_constraintTop_toBottomOf="@+id/etNameAbout" />
+
+    <EditText
+        android:id="@+id/etEmailAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:autofillHints="emailAddress"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:text="jelena3160@gmail.com"
+        android:clickable="false"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/etLastNameAbout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/etLastNameAbout"
+        app:layout_constraintTop_toBottomOf="@+id/etLastNameAbout" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

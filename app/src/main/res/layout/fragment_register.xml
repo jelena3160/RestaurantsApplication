@@ -44,7 +44,7 @@
         android:autofillHints="password"
         android:background="@drawable/borders"
         android:drawableStart="@drawable/padlock"
-        android:drawableEnd="@drawable/hidden_psw"
+        android:drawableEnd="@drawable/checkmark"
         android:drawablePadding="15dp"
         android:hint="@string/repeat_password"
         android:inputType="textPassword"
@@ -80,7 +80,6 @@
         android:id="@+id/tvCreate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="@string/create_a_new_account"
         android:textColor="@color/secondaryColor"
         android:textSize="26sp"
@@ -93,8 +92,8 @@
     <EditText
         android:id="@+id/etEmailR"
         android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         android:autofillHints="emailAddress"
         android:background="@drawable/borders"
         android:drawableStart="@drawable/user1"
@@ -105,17 +104,51 @@
         android:textColor="@color/primaryTextColor"
         android:textColorHint="@color/secondaryLightColor"
         android:textCursorDrawable="@color/orange"
+        app:layout_constraintStart_toStartOf="@+id/etLastName"
+        app:layout_constraintTop_toBottomOf="@+id/etLastName" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:autofillHints="name"
+        android:background="@drawable/borders"
+        android:drawablePadding="15dp"
+        android:hint="@string/enter_first_name"
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        android:textColor="@color/primaryTextColor"
+        android:textColorHint="@color/secondaryLightColor"
+        android:textCursorDrawable="@color/orange"
         app:layout_constraintStart_toStartOf="@+id/tvCreate"
         app:layout_constraintTop_toBottomOf="@+id/tvCreate" />
 
+    <EditText
+        android:id="@+id/etLastName"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints="name"
+        android:background="@drawable/borders"
+        android:drawablePadding="15dp"
+        android:hint="@string/enter_last_name"
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        android:textColor="@color/primaryTextColor"
+        android:textColorHint="@color/secondaryLightColor"
+        android:textCursorDrawable="@color/orange"
+        app:layout_constraintStart_toStartOf="@+id/etName"
+        app:layout_constraintTop_toBottomOf="@+id/etName" />
+
     <ImageView
         android:id="@+id/iLogo2"
-        android:layout_width="152dp"
-        android:layout_height="150dp"
+        android:layout_width="145dp"
+        android:layout_height="133dp"
+        android:contentDescription="@string/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/logo"
         app:srcCompat="@drawable/logoonly" />
 
 

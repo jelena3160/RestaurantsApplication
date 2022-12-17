@@ -15,5 +15,11 @@
     <string name="register_now">Register now</string>
     <string name="logo">logo</string>
     <string name="profile_picture">Profile picture</string>
+    <string name="enter_first_name">Enter first name</string>
+    <string name="enter_last_name">Enter last name</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="email">Email</string>
+    <string name="logout">Logout</string>
 
 </resources>

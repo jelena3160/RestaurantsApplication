@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
 import com.example.restaurants.ViewModel.AboutViewModel
 
 class AboutFragment : Fragment() {
@@ -27,6 +29,14 @@ class AboutFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(AboutViewModel::class.java)
         // TODO: Use the ViewModel
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val aboutToLogin = view.findViewById<Button>(R.id.btnLogout)
+        aboutToLogin.setOnClickListener{
+            findNavController().navigate(R.id.action_mainFragment_to_loginFragment)
+        }
+
     }
 
 }
