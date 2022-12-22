@@ -22,4 +22,16 @@
     <string name="email">Email</string>
     <string name="logout">Logout</string>
 
+    <string-array name="foodPreference">
+        <item>Choose food preference</item>
+        <item>Wine</item>
+        <item>Italian</item>
+        <item>Pizza</item>
+        <item>Dessert</item>
+        <item>Steak</item>
+        <item>Japanese</item>
+        <item>Indian</item>
+        <item>Thai</item>
+    </string-array>
+
 </resources>

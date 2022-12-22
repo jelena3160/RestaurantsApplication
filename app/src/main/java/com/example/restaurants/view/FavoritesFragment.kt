@@ -1,4 +1,4 @@
-package com.example.restaurants
+package com.example.restaurants.view
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -6,7 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.restaurants.ViewModel.FavoritesViewModel
+import com.example.restaurants.R
+import com.example.restaurants.viewModel.FavoritesViewModel
 
 class FavoritesFragment : Fragment() {
 

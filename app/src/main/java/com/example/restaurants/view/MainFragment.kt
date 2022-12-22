@@ -1,4 +1,4 @@
-package com.example.restaurants
+package com.example.restaurants.view
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -6,7 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.restaurants.ViewModel.MainViewModel
+import com.example.restaurants.R
+import com.example.restaurants.viewModel.MainViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainFragment : Fragment() {
@@ -37,9 +38,9 @@ class MainFragment : Fragment() {
             view.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId){
-                R.id.homeFragment->replaceFragment(HomeFragment())
-                R.id.favoritesFragment->replaceFragment(FavoritesFragment())
-                R.id.aboutFragment->replaceFragment(AboutFragment())
+                R.id.homeFragment ->replaceFragment(HomeFragment())
+                R.id.favoritesFragment ->replaceFragment(FavoritesFragment())
+                R.id.aboutFragment ->replaceFragment(AboutFragment())
                 else ->{
 
                 }

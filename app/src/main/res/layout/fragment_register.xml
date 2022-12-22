@@ -10,13 +10,12 @@
         style="@style/Buttons"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="8dp"
         android:text="@string/register_now"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/etPasswordRepeatR"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/etPasswordRepeatR"
-        app:layout_constraintTop_toBottomOf="@+id/etPasswordRepeatR"
+        app:layout_constraintEnd_toEndOf="@+id/sFoodPreference"
+        app:layout_constraintStart_toStartOf="@+id/sFoodPreference"
+        app:layout_constraintTop_toBottomOf="@+id/sFoodPreference"
         tools:ignore="TextContrastCheck" />
 
     <TextView
@@ -40,10 +39,9 @@
         android:id="@+id/etPasswordRepeatR"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:autofillHints="password"
         android:background="@drawable/borders"
-        android:drawableStart="@drawable/padlock"
         android:drawableEnd="@drawable/checkmark"
         android:drawablePadding="15dp"
         android:hint="@string/repeat_password"
@@ -60,21 +58,19 @@
         android:id="@+id/etPasswordR"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:autofillHints="password"
         android:background="@drawable/borders"
-        android:drawableStart="@drawable/padlock"
-        android:drawableEnd="@drawable/hidden_psw"
         android:drawablePadding="15dp"
         android:hint="@string/enter_password"
         android:inputType="textPassword"
-
         android:padding="15dp"
         android:textColor="@color/primaryTextColor"
         android:textColorHint="@color/secondaryLightColor"
         android:textCursorDrawable="@color/orange"
         app:layout_constraintStart_toStartOf="@+id/etEmailR"
         app:layout_constraintTop_toBottomOf="@+id/etEmailR" />
+
 
     <TextView
         android:id="@+id/tvCreate"
@@ -93,10 +89,9 @@
         android:id="@+id/etEmailR"
         android:layout_width="300dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:autofillHints="emailAddress"
         android:background="@drawable/borders"
-        android:drawableStart="@drawable/user1"
         android:drawablePadding="15dp"
         android:hint="@string/email_address"
         android:inputType="textEmailAddress"
@@ -111,7 +106,7 @@
         android:id="@+id/etName"
         android:layout_width="300dp"
         android:layout_height="0dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:autofillHints="name"
         android:background="@drawable/borders"
         android:drawablePadding="15dp"
@@ -128,7 +123,7 @@
         android:id="@+id/etLastName"
         android:layout_width="300dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:autofillHints="name"
         android:background="@drawable/borders"
         android:drawablePadding="15dp"
@@ -150,6 +145,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logoonly" />
+
+    <Spinner
+        android:id="@+id/sFoodPreference"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/borders"
+        android:spinnerMode="dropdown"
+        android:padding="15dp"
+        android:textColor="@color/primaryTextColor"
+        app:layout_constraintEnd_toEndOf="@+id/etPasswordRepeatR"
+        app:layout_constraintStart_toStartOf="@+id/etPasswordRepeatR"
+        app:layout_constraintTop_toBottomOf="@+id/etPasswordRepeatR" />
+
+    <ImageView
+        android:id="@+id/iVisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/etPasswordR"
+        app:layout_constraintEnd_toEndOf="@+id/etPasswordR"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="@+id/etPasswordR"
+        app:layout_constraintTop_toTopOf="@+id/etPasswordR"
+        app:layout_constraintVertical_bias="0.527"
+        app:srcCompat="@drawable/visible_psw" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
