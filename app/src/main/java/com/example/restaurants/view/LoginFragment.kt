@@ -1,5 +1,6 @@
 package com.example.restaurants.view
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -43,11 +44,20 @@ class LoginFragment : Fragment() {
         binding.tvJoinNow.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
+        val sharedPref = requireActivity().getSharedPreferences("UserInfoPref", Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+
         binding.btnLogin.setOnClickListener {
             viewModel.getUserByEmail(binding.etEmail.text.toString(), binding.etPassword.text.toString())
             viewModel.user.observe(viewLifecycleOwner, Observer {
                 if(it != null) {
-                    println(it.email)
+                    editor.apply {
+                        putString("usrName", it.firstName)
+                        putString("usrLastName", it.lastName)
+                        putString("usrEmail", it.email)
+                        putString("foodPreference", it.restaurantPreference)
+                        apply()
+                    }
                     if(findNavController().currentDestination?.id == R.id.loginFragment){
                         findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
                     }

@@ -51,6 +51,7 @@ class RegisterFragment : Fragment() {
         val sharedPref = activity?.getSharedPreferences("UserInfoPref", Context.MODE_PRIVATE)
         val editor = sharedPref?.edit()
 
+        // Validation of fields and insertion data in database and shared pref
         binding.btnRegister.setOnClickListener {
             if(validateFields()) {
                 val name = binding.etName.text.toString()
@@ -82,14 +83,15 @@ class RegisterFragment : Fragment() {
         var firstTime = true
         binding.iVisible.setOnClickListener {
             if(firstTime) {
+                binding.etPasswordR.transformationMethod = PasswordTransformationMethod.getInstance()
                 binding.etPasswordR.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-                binding.iVisible.setBackgroundResource(R.drawable.hidden_psw)
-                firstTime = !firstTime
+                binding.iVisible.setImageResource(R.drawable.hidden_psw)
+                firstTime = false
             } else {
                 binding.etPasswordR.transformationMethod = PasswordTransformationMethod.getInstance()
                 binding.etPasswordR.inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD
-                binding.iVisible.setBackgroundResource(R.drawable.visible_psw)
-                firstTime = !firstTime
+                binding.iVisible.setImageResource(R.drawable.visible_psw)
+                firstTime = true
             }
         }
     }

@@ -12,3 +12,21 @@ data class User(
     val password: String?,
     val restaurantPreference: String?
 )
+
+@Entity
+class UserName(
+    val email: String,
+    val firstName: String?
+)
+
+@Entity
+class UserLastName(
+    val email: String,
+    val lastName: String?
+)
+
+@Entity
+class FoodPreference(
+    val email: String,
+    val restaurantPreference: String?
+)

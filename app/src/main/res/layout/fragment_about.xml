@@ -10,48 +10,49 @@
         style="@style/Buttons"
         android:layout_width="300dp"
         android:layout_height="60dp"
+        android:layout_marginTop="76dp"
         android:text="@string/logout"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/etEmailAbout"
         app:layout_constraintStart_toStartOf="@+id/etEmailAbout"
-        app:layout_constraintTop_toBottomOf="@+id/etEmailAbout"
+        app:layout_constraintTop_toBottomOf="@+id/sFoodPreferenceAbout"
         tools:ignore="TextContrastCheck" />
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/iProfilePic"
-        android:layout_width="148dp"
-        android:layout_height="196dp"
+        android:layout_width="141dp"
+        android:layout_height="137dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/profile_picture"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
         app:srcCompat="@drawable/profile_picture"
-        android:contentDescription="@string/profile_picture" />
+        app:strokeColor="@color/secondaryTextColor"
+        app:strokeWidth="1dp" />
 
     <ImageView
         android:id="@+id/iAddProfilePic"
         android:layout_width="48dp"
         android:layout_height="46dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="@string/profile_picture"
         app:layout_constraintBottom_toBottomOf="@+id/iProfilePic"
         app:layout_constraintEnd_toEndOf="@+id/iProfilePic"
-        app:srcCompat="@drawable/add_profile_picture"
-        android:contentDescription="@string/profile_picture" />
+        app:srcCompat="@drawable/add_profile_picture" />
 
     <EditText
         android:id="@+id/etNameAbout"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
+        android:autofillHints="name"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="@string/first_name"
-        android:hint="@string/first_name"
-        android:autofillHints="name"
         android:textAlignment="center"
-        android:drawableEnd="@drawable/marker"
         app:layout_constraintEnd_toEndOf="@+id/iProfilePic"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="@+id/iProfilePic"
@@ -59,16 +60,13 @@
 
     <EditText
         android:id="@+id/etLastNameAbout"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:ems="10"
         android:autofillHints="name"
+        android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="@string/last_name"
-        android:hint="@string/last_name"
-        android:drawableEnd="@drawable/marker"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/etNameAbout"
         app:layout_constraintHorizontal_bias="0.0"
@@ -77,22 +75,60 @@
 
     <EditText
         android:id="@+id/etEmailAbout"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:autofillHints="emailAddress"
-        android:ems="10"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        android:text="jelena3160@gmail.com"
         android:clickable="false"
+        android:ems="10"
+        android:inputType="textEmailAddress"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/etLastNameAbout"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/etLastNameAbout"
         app:layout_constraintTop_toBottomOf="@+id/etLastNameAbout" />
 
+    <Spinner
+        android:id="@+id/sFoodPreferenceAbout"
+        android:layout_width="224dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="@+id/etEmailAbout"
+        app:layout_constraintTop_toBottomOf="@+id/etEmailAbout" />
 
+    <ImageView
+        android:id="@+id/iNameChanger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/etNameAbout"
+        app:layout_constraintEnd_toEndOf="@+id/etNameAbout"
+        app:layout_constraintTop_toTopOf="@+id/etNameAbout"
+        app:layout_constraintVertical_bias="0.333"
+        app:srcCompat="@drawable/marker" />
+
+    <ImageView
+        android:id="@+id/iLastNameChanger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/etLastNameAbout"
+        app:layout_constraintEnd_toEndOf="@+id/etLastNameAbout"
+        app:layout_constraintTop_toTopOf="@+id/etLastNameAbout"
+        app:layout_constraintVertical_bias="0.333"
+        app:srcCompat="@drawable/marker" />
+
+    <ImageView
+        android:id="@+id/iFoodPreferenceChanger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/sFoodPreferenceAbout"
+        app:layout_constraintEnd_toEndOf="@+id/etEmailAbout"
+        app:layout_constraintTop_toTopOf="@+id/sFoodPreferenceAbout"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/marker" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

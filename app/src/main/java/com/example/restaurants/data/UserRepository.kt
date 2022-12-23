@@ -17,6 +17,18 @@ class UserRepository(private val userDao: UserDao) {
         return userDao.getUser(email, password)
     }
 
+    suspend fun updateName(userName: UserName){
+        userDao.updateName(userName)
+    }
+
+    suspend fun updateLastName(lastName: UserLastName){
+        userDao.updateLastName(lastName)
+    }
+
+    suspend fun updateFoodPreference(foodPreference: FoodPreference){
+        userDao.updateFoodPreference(foodPreference)
+    }
+
 
 
 
