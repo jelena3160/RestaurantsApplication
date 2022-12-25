@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_loginFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_resetPassordFragment"
+            app:destination="@id/resetPassordFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -34,6 +37,15 @@
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetPassordFragment"
+        android:name="com.example.restaurants.view.ResetPasswordFragment"
+        android:label="fragment_reset_passord"
+        tools:layout="@layout/fragment_reset_passord" >
+        <action
+            android:id="@+id/action_resetPassordFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
 </navigation>

@@ -21,6 +21,9 @@
     <string name="last_name">Last name</string>
     <string name="email">Email</string>
     <string name="logout">Logout</string>
+    <string name="rating">Rating</string>
+    <string name="set_your_new_password">Set your new password</string>
+    <string name="continue_to_login">Continue</string>
 
     <string-array name="foodPreference">
         <item>Choose food preference</item>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@android:id/progress">
+        <rotate android:toDegrees="120"
+            android:fromDegrees="120">
+            <shape android:shape="ring"
+
+                android:innerRadiusRatio="3"
+                android:useLevel="true"
+                android:thickness="7sp">
+
+                <gradient android:type="sweep"
+                    android:startColor="@color/primaryLightColor"
+                    android:centerColor="@color/primaryColor"
+                    android:endColor="@color/primaryDarkColor"/>
+            </shape>
+
+        </rotate>
+    </item>
+
+</layer-list>

@@ -9,6 +9,6 @@ data class Images (
     @SerializedName("caption"     ) var caption     : String?      = null,
     @SerializedName("source_id"   ) var sourceId    : String?      = null,
     @SerializedName("source_url"  ) var sourceUrl   : String?      = null,
-    @SerializedName("attribution" ) var attribution : Attribution? = Attribution()
+    @SerializedName("attribution" ) var attributionImages : AttributionImages? = AttributionImages()
 
 )

@@ -27,6 +27,7 @@ import com.example.restaurants.databinding.FragmentAboutBinding
 import com.example.restaurants.viewModel.AboutViewModel
 import kotlinx.android.synthetic.main.fragment_about.*
 
+@Suppress("DEPRECATION")
 class AboutFragment : Fragment() {
 
     private var _binding: FragmentAboutBinding? = null
@@ -35,16 +36,12 @@ class AboutFragment : Fragment() {
     private var pickedPhoto: Uri? = null
     private var pickedBitMap: Bitmap? = null
 
-    companion object {
-        fun newInstance() = AboutFragment()
-    }
-
     private lateinit var viewModel: AboutViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentAboutBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -53,34 +50,16 @@ class AboutFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[AboutViewModel::class.java]
 
-        // Setting spinner for food preference
-        val listPreference = resources.getStringArray(R.array.foodPreference)
-        val spinner = view.findViewById<Spinner>(R.id.sFoodPreferenceAbout)
-        if (spinner != null) {
-            val adapter = context?.let { ArrayAdapter(it, R.layout.dropdown_item_about, listPreference) }
-            spinner.adapter = adapter
-        }
-        // Initially
-        binding.etNameAbout.setText(viewModel.getName())
-        binding.etLastNameAbout.setText(viewModel.getLastName())
-        binding.etEmailAbout.setText(viewModel.getEmail())
-        val pos = viewModel.getFoodPreference()
-        val index = listPreference.indexOf(pos)
-        binding.sFoodPreferenceAbout.setSelection(index)
-        binding.sFoodPreferenceAbout.isEnabled = false
-        binding.etNameAbout.isEnabled = false
-        binding.etLastNameAbout.isEnabled = false
-        binding.etEmailAbout.isEnabled = false
+        setSpinner()
+        initialize()
+
 
         // Uploading image from library
         // TODO Save image to database in order to stay
         binding.iAddProfilePic.setOnClickListener {
             if(ContextCompat.checkSelfPermission(requireContext(),android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(
-                    requireActivity(),
-                    arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),
-                    1
-                )
+                    requireActivity(), arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE), 1)
             }
             else {
                 val galleryIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
@@ -132,8 +111,6 @@ class AboutFragment : Fragment() {
             }
         }
 
-
-        // Clearing shared pref and returning to login fragment
         binding.btnLogout.setOnClickListener{
             viewModel.clearData()
             findNavController().navigate(R.id.action_mainFragment_to_loginFragment)
@@ -141,6 +118,7 @@ class AboutFragment : Fragment() {
 
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -155,6 +133,7 @@ class AboutFragment : Fragment() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if(requestCode == 2 && resultCode == Activity.RESULT_OK && data != null){
             pickedPhoto = data.data
@@ -171,6 +150,29 @@ class AboutFragment : Fragment() {
         }
 
         super.onActivityResult(requestCode, resultCode, data)
+    }
+
+    private fun setSpinner(){
+        val listPreference = resources.getStringArray(R.array.foodPreference)
+        val spinner = view?.findViewById<Spinner>(R.id.sFoodPreferenceAbout)
+        if (spinner != null) {
+            val adapter = context?.let { ArrayAdapter(it, R.layout.dropdown_item_about, listPreference) }
+            spinner.adapter = adapter
+        }
+    }
+
+    private fun initialize(){
+        val listPreference = resources.getStringArray(R.array.foodPreference)
+        binding.etNameAbout.setText(viewModel.getName())
+        binding.etLastNameAbout.setText(viewModel.getLastName())
+        binding.etEmailAbout.setText(viewModel.getEmail())
+        val pos = viewModel.getFoodPreference()
+        val index = listPreference.indexOf(pos)
+        binding.sFoodPreferenceAbout.setSelection(index)
+        binding.sFoodPreferenceAbout.isEnabled = false
+        binding.etNameAbout.isEnabled = false
+        binding.etLastNameAbout.isEnabled = false
+        binding.etEmailAbout.isEnabled = false
     }
 
 

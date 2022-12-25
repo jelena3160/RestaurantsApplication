@@ -19,12 +19,9 @@ class HomeViewModel : ViewModel() {
         }
     }
 
-    suspend fun fetchActivity(): RestaurantsResponse {
+    private suspend fun fetchActivity(): RestaurantsResponse {
 
-        val instance= RestaurantRetrofitClient.getInstance()
-        val api=instance.create(RestaurantApi::class.java)
-
-        val response=api.getData()
+        val response=RestaurantRetrofitClient.getInstance().create(RestaurantApi::class.java).getData()
 
         if(response.isSuccessful){
             return RestaurantsResponse(response.body()!!.results,response.body()!!.more,response.body()!!.isDeprecated)

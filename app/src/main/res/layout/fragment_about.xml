@@ -30,6 +30,7 @@
         app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
         app:srcCompat="@drawable/profile_picture"
         app:strokeColor="@color/secondaryTextColor"
+        android:scaleType="fitXY"
         app:strokeWidth="1dp" />
 
     <ImageView
@@ -46,7 +47,7 @@
     <EditText
         android:id="@+id/etNameAbout"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginTop="36dp"
         android:autofillHints="name"
         android:ems="10"
@@ -61,7 +62,7 @@
     <EditText
         android:id="@+id/etLastNameAbout"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:autofillHints="name"
         android:ems="10"
@@ -76,10 +77,11 @@
     <EditText
         android:id="@+id/etEmailAbout"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:autofillHints="emailAddress"
         android:clickable="false"
+
         android:ems="10"
         android:inputType="textEmailAddress"
         android:textAlignment="center"

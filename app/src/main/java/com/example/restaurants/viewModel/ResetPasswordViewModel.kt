@@ -1,18 +1,14 @@
 package com.example.restaurants.viewModel
 
 import android.app.Application
-import android.content.Context
-import android.content.SharedPreferences
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.restaurants.data.User
 import com.example.restaurants.data.UserDatabase
+import com.example.restaurants.data.UserPassword
 import com.example.restaurants.data.UserRepository
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class RegisterViewModel(application: Application) : AndroidViewModel(application) {
-
+class ResetPasswordViewModel(application: Application) : AndroidViewModel(application) {
     private val repository: UserRepository
 
     init {
@@ -20,10 +16,9 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
         repository = UserRepository(userDao)
     }
 
-    fun addUser(user: User){
-        viewModelScope.launch(Dispatchers.IO){
-            repository.addUser(user)
+    fun updatePassword(password: UserPassword){
+        viewModelScope.launch {
+            repository.updatePassword(password)
         }
     }
-
 }

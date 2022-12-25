@@ -30,7 +30,7 @@
         android:inputType="textEmailAddress"
         android:padding="15dp"
         android:textColor="@color/primaryTextColor"
-        android:textColorHint="@color/secondaryLightColor"
+        android:textColorHint="@color/purple"
 
         android:textCursorDrawable="@color/orange"
         app:layout_constraintEnd_toEndOf="@+id/iLogo"
@@ -45,14 +45,13 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/borders"
         android:drawableStart="@drawable/padlock"
-        android:drawableEnd="@drawable/hidden_psw"
         android:drawablePadding="15dp"
         android:hint="@string/enter_password"
         android:inputType="textPassword"
         android:padding="15dp"
         android:textColor="@color/primaryTextColor"
 
-        android:textColorHint="@color/secondaryLightColor"
+        android:textColorHint="@color/purple"
         android:textCursorDrawable="@color/orange"
         app:layout_constraintEnd_toEndOf="@+id/etEmail"
         app:layout_constraintHorizontal_bias="0.0"
@@ -66,7 +65,6 @@
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="72dp"
-        android:fontFamily="serif-monospace"
         android:text="@string/signIn"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/etPassword"
@@ -80,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
         android:text="@string/login_welcome_msg"
-        android:textColor="@color/secondaryColor"
+        android:textColor="@color/purple"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/etEmail"
@@ -128,4 +126,5 @@
         android:textColor="@color/orange"
         app:layout_constraintEnd_toEndOf="@+id/etPassword"
         app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

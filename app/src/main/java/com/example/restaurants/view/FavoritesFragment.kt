@@ -6,28 +6,55 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.restaurants.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.restaurants.adapter.FavoritesAdapter
+import com.example.restaurants.databinding.FragmentFavoritesBinding
+import com.example.restaurants.model.json.Results
 import com.example.restaurants.viewModel.FavoritesViewModel
 
 class FavoritesFragment : Fragment() {
 
+    private var _binding: FragmentFavoritesBinding? = null
+    private val binding get() = _binding!!
     companion object {
         fun newInstance() = FavoritesFragment()
     }
 
+    private val dataset: ArrayList<Results> = arrayListOf()
     private lateinit var viewModel: FavoritesViewModel
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_favorites, container, false)
+        _binding = FragmentFavoritesBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(FavoritesViewModel::class.java)
-        // TODO: Use the ViewModel
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel = ViewModelProvider(this)[FavoritesViewModel::class.java]
+        val preference = StringBuilder()
+        preference.append("cuisine-")
+        preference.append(viewModel.getFoodPreference())
+        viewModel.getUpdatedText("Paris",preference.toString())
+        addRecycleView()
+
     }
 
+    private fun addRecycleView(){
+        var adapter = FavoritesAdapter(dataset)
+
+        viewModel.uiTextLiveData.observe(viewLifecycleOwner) { updatedActivity ->
+            adapter.updateUserList(updatedActivity.results)
+        }
+        binding.rvFavorites.setHasFixedSize(true)
+        binding.rvFavorites.adapter = adapter
+        binding.rvFavorites.layoutManager = LinearLayoutManager(requireContext())
+
+
+    }
 }

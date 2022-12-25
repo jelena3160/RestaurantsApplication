@@ -23,6 +23,9 @@ interface UserDao {
     @Update(entity = User::class)
     suspend fun updateFoodPreference(foodPreference: FoodPreference)
 
+    @Update(entity = User::class)
+    suspend fun updatePassword(password: UserPassword)
+
     @Query("SELECT * FROM users_table")
     fun readAllData(): Flow<List<User>>
 

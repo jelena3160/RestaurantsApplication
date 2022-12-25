@@ -5,36 +5,25 @@
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="4dp"
+    app:cardCornerRadius="10dp"
     app:cardElevation="0dp"
     app:cardMaxElevation="0dp"
     android:layout_margin="15dp">
 
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/iCardViewBackground"
-            android:layout_width="413dp"
-            android:layout_height="118dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/wave_haikei"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#A7ABC6">
 
         <ImageView
             android:id="@+id/iPlaceHolder"
-            android:layout_width="71dp"
-            android:layout_height="77dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:scaleType="fitXY"
             android:src="@drawable/ic_baseline_photo_24"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,23 +31,122 @@
             android:id="@+id/tvRestaurantName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Restaurant name"
             android:textAllCaps="true"
+            android:textColor="@color/primaryDarkColor"
             android:textSize="15sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/iCardViewBackground"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.073"
             app:layout_constraintStart_toEndOf="@+id/iPlaceHolder"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/iPlaceHolder" />
 
         <TextView
             android:id="@+id/tvRestaurantAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-
+            android:layout_width="105dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:text="Restaurant address"
+            android:textColor="@color/primaryDarkColor"
             app:layout_constraintStart_toStartOf="@+id/tvRestaurantName"
             app:layout_constraintTop_toBottomOf="@+id/tvRestaurantName" />
+
+        <ProgressBar
+            android:id="@+id/progressBarBackground"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="86dp"
+            android:layout_height="103dp"
+            android:indeterminateOnly="false"
+            android:max="120"
+            android:progress="100"
+            android:progressDrawable="@drawable/progress_bar_transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.235" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="86dp"
+            android:layout_height="103dp"
+            android:indeterminateOnly="false"
+            android:max="120"
+
+            android:progress="92"
+            android:progressDrawable="@drawable/progress_bar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.235" />
+
+
+        <ImageView
+            android:id="@+id/iLocation"
+            android:layout_width="24dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvRestaurantAddress"
+            app:layout_constraintEnd_toStartOf="@+id/tvRestaurantAddress"
+            app:layout_constraintTop_toTopOf="@+id/tvRestaurantAddress"
+            app:srcCompat="@drawable/ic_baseline_near_me_24" />
+
+        <ImageView
+            android:id="@+id/iDollar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iPlaceHolder"
+            app:layout_constraintStart_toStartOf="@+id/iLocation"
+            app:layout_constraintTop_toBottomOf="@+id/iLocation"
+            app:srcCompat="@drawable/ic_baseline_attach_money_24" />
+
+        <ImageView
+            android:id="@+id/iDollar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="@+id/iDollar1"
+            app:layout_constraintTop_toTopOf="@+id/iDollar1"
+            app:srcCompat="@drawable/ic_baseline_attach_money_24" />
+
+        <ImageView
+            android:id="@+id/iDollar3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iDollar2"
+            app:layout_constraintStart_toEndOf="@+id/iDollar1"
+            app:layout_constraintTop_toTopOf="@+id/iDollar2"
+            app:srcCompat="@drawable/ic_baseline_attach_money_24" />
+
+        <TextView
+            android:id="@+id/tvRating"
+            android:layout_width="38dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="13dp"
+            android:text="@string/rating"
+            android:textColor="@color/primaryDarkColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/progressBarBackground"
+            app:layout_constraintStart_toStartOf="@+id/progressBarBackground" />
+
+        <TextView
+            android:id="@+id/tvRatingProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9.21"
+            android:textColor="@color/primaryLightColor"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+            app:layout_constraintEnd_toEndOf="@+id/progressBar"
+            app:layout_constraintStart_toStartOf="@+id/progressBar"
+            app:layout_constraintTop_toTopOf="@+id/progressBar" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

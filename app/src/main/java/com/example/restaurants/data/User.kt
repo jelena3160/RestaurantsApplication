@@ -30,3 +30,9 @@ class FoodPreference(
     val email: String,
     val restaurantPreference: String?
 )
+
+@Entity
+class UserPassword(
+    val email: String?,
+    val password: String?
+)

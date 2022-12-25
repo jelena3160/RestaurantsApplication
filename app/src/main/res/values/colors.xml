@@ -9,5 +9,7 @@
     <color name="primaryTextColor">#ffffff</color>
     <color name="secondaryTextColor">#000000</color>
     <color name="textInputBackgroundColor">#EC1B2447</color>
-    <color name="orange">#f8b208</color>
+    <color name="orange">#FF9800</color>
+    <color name="transparent">#B5E3E2E2</color>
+    <color name="purple">#A7ABC6</color>
 </resources>

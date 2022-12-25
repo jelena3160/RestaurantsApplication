@@ -29,6 +29,12 @@ class UserRepository(private val userDao: UserDao) {
         userDao.updateFoodPreference(foodPreference)
     }
 
+    suspend fun updatePassword(password: UserPassword){
+        userDao.updatePassword(password)
+    }
+
+
+
 
 
 
