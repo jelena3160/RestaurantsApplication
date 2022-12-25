@@ -6,14 +6,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.restaurants.R
+import com.example.restaurants.adapter.RestaurantsAdapter
+import com.example.restaurants.databinding.FragmentHomeBinding
+import com.example.restaurants.model.json.Results
 import com.example.restaurants.viewModel.HomeViewModel
 
 class HomeFragment : Fragment() {
 
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
     companion object {
         fun newInstance() = HomeFragment()
     }
+
+    private val dataset: ArrayList<Results> = arrayListOf()
 
 
     private lateinit var viewModel: HomeViewModel
@@ -23,13 +31,32 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-        // TODO: Use the ViewModel
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+        binding.btn.setOnClickListener{viewModel.getUpdatedText()}
+
+        addRecycleView()
+
     }
+
+    private fun addRecycleView(){
+        var adapter = RestaurantsAdapter(dataset)
+
+        viewModel.uiTextLiveData.observe(viewLifecycleOwner) { updatedActivity ->
+            adapter.updateUserList(updatedActivity.results)
+        }
+        binding.rvHome.setHasFixedSize(true)
+        binding.rvHome.adapter = adapter
+        binding.rvHome.layoutManager = LinearLayoutManager(requireContext())
+
+
+    }
+
 
 }

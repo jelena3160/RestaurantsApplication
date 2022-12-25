@@ -78,7 +78,7 @@
         android:id="@+id/tvWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="36dp"
         android:text="@string/login_welcome_msg"
         android:textColor="@color/secondaryColor"
         android:textSize="26sp"
@@ -115,16 +115,9 @@
         app:layout_constraintTop_toTopOf="@+id/tvRegisterCheck"
         app:layout_constraintVertical_bias="0.0" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="131dp"
-        android:layout_height="48dp"
-        android:text="@string/remember_me"
-        app:layout_constraintStart_toStartOf="@+id/etPassword"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvForgotPassword"
         android:layout_width="131dp"
         android:layout_height="48dp"
         android:clickable="true"

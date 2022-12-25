@@ -2,14 +2,11 @@ package com.example.restaurants.view
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.*
-import androidx.navigation.NavController
-import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import com.example.restaurants.R
 import com.example.restaurants.databinding.FragmentLoginBinding
@@ -66,5 +63,11 @@ class LoginFragment : Fragment() {
                     println("invalid")
             })
         }
+
+        binding.tvForgotPassword.setOnClickListener {
+
+        }
     }
+
+
 }
