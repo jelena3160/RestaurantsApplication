@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvSnippet"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/purple"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@+id/iInfo"
+        app:layout_constraintTop_toBottomOf="@+id/tvLocationD" />
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/toolbarColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:contentDescription="@string/image"
+        android:id="@+id/iRestaurantPicture"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:src="@drawable/download" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/primaryDarkColor"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iRestaurantPicture" />
+
+    <TextView
+        android:id="@+id/tvGoogleLocation"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/see_on_map"
+        android:textColor="@color/purple"
+        android:textSize="17sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@+id/iGoogleLocation"
+        app:layout_constraintTop_toBottomOf="@+id/tvSnippet" />
+
+    <ImageView
+        android:contentDescription="@string/image"
+        android:id="@+id/iLocationD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/ic_baseline_near_me_24_2"
+        app:layout_constraintStart_toStartOf="@+id/tvName"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <TextView
+        android:id="@+id/tvLocationD"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/purple"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@+id/iLocationD"
+        app:layout_constraintTop_toTopOf="@+id/iLocationD" />
+
+    <ImageView
+        android:contentDescription="@string/image"
+        android:id="@+id/iInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/information"
+        app:layout_constraintStart_toStartOf="@+id/iLocationD"
+        app:layout_constraintTop_toTopOf="@+id/tvSnippet" />
+
+    <ImageView
+        android:contentDescription="@string/image"
+        android:id="@+id/iGoogleLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/location"
+        app:layout_constraintStart_toStartOf="@+id/iInfo"
+        app:layout_constraintTop_toTopOf="@+id/tvGoogleLocation" />
+
+    <ImageView
+        android:contentDescription="@string/image"
+        android:id="@+id/iNavigate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/route"
+        app:layout_constraintStart_toStartOf="@+id/iMore"
+        app:layout_constraintTop_toTopOf="@+id/tvNavigate" />
+
+
+    <TextView
+        android:id="@+id/tvNavigate"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/get_me_there"
+        android:textColor="@color/purple"
+        android:textSize="17sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@+id/iNavigate"
+        app:layout_constraintTop_toBottomOf="@+id/tvMore" />
+
+    <ImageView
+        android:contentDescription="@string/image"
+        android:id="@+id/iMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/search"
+        app:layout_constraintStart_toStartOf="@+id/iGoogleLocation"
+        app:layout_constraintTop_toTopOf="@+id/tvMore" />
+
+    <TextView
+        android:id="@+id/tvMore"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/get_more_information"
+        android:textColor="@color/purple"
+        android:textSize="17sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@+id/iMore"
+        app:layout_constraintTop_toBottomOf="@+id/tvGoogleLocation" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

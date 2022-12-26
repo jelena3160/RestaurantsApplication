@@ -3,6 +3,7 @@
     <color name="primaryColor">#464c73</color>
     <color name="primaryLightColor">#7378a2</color>
     <color name="primaryDarkColor">#EC1B2447</color>
+    <color name="toolbarColor">#9C1B2447</color>
     <color name="secondaryColor">#82e2fe</color>
     <color name="secondaryLightColor">#b7ffff</color>
     <color name="secondaryDarkColor">#4bb0cb</color>

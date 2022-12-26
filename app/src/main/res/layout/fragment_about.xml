@@ -5,6 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/toolbarColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <Button
         android:id="@+id/btnLogout"
         style="@style/Buttons"
@@ -24,13 +32,13 @@
         android:layout_height="137dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/profile_picture"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
         app:srcCompat="@drawable/profile_picture"
         app:strokeColor="@color/secondaryTextColor"
-        android:scaleType="fitXY"
         app:strokeWidth="1dp" />
 
     <ImageView

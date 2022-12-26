@@ -16,9 +16,6 @@ class FavoritesFragment : Fragment() {
 
     private var _binding: FragmentFavoritesBinding? = null
     private val binding get() = _binding!!
-    companion object {
-        fun newInstance() = FavoritesFragment()
-    }
 
     private val dataset: ArrayList<Results> = arrayListOf()
     private lateinit var viewModel: FavoritesViewModel
@@ -42,6 +39,7 @@ class FavoritesFragment : Fragment() {
         preference.append(viewModel.getFoodPreference())
         viewModel.getUpdatedText("Paris",preference.toString())
         addRecycleView()
+        setToolbar()
 
     }
 
@@ -55,6 +53,11 @@ class FavoritesFragment : Fragment() {
         binding.rvFavorites.adapter = adapter
         binding.rvFavorites.layoutManager = LinearLayoutManager(requireContext())
 
+    }
 
+    private fun setToolbar(){
+        requireActivity().setActionBar(binding.toolbar)
+        requireActivity().actionBar?.setDisplayShowHomeEnabled(true)
+        requireActivity().actionBar?.title = "Favorites"
     }
 }

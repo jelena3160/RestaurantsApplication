@@ -52,6 +52,7 @@ class AboutFragment : Fragment() {
 
         setSpinner()
         initialize()
+        setToolbar()
 
 
         // Uploading image from library
@@ -173,6 +174,12 @@ class AboutFragment : Fragment() {
         binding.etNameAbout.isEnabled = false
         binding.etLastNameAbout.isEnabled = false
         binding.etEmailAbout.isEnabled = false
+    }
+
+    private fun setToolbar(){
+        requireActivity().setActionBar(binding.toolbar)
+        requireActivity().actionBar?.setDisplayShowHomeEnabled(true)
+        requireActivity().actionBar?.title = "About"
     }
 
 

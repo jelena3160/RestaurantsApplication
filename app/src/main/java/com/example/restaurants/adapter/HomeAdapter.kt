@@ -11,33 +11,14 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.restaurants.R
+import com.example.restaurants.RestaurantClickHandler
 import com.example.restaurants.model.json.Results
 import java.math.RoundingMode
 import java.text.DecimalFormat
 import kotlin.math.roundToInt
 
-class HomeAdapter(private var dataset: ArrayList<Results>): RecyclerView.Adapter<HomeAdapter.ViewHolder>(){
+class HomeAdapter(private var dataset: ArrayList<Results>, private val clickHandler: RestaurantClickHandler): RecyclerView.Adapter<HomeAdapter.ViewHolder>(){
 
-
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
-
-        val restaurantName: TextView
-        val restaurantAddress:TextView
-        val restaurantImage: ImageView
-        val normal: ImageView
-        val expensive: ImageView
-        val rating: TextView
-        val ratingProgress: ProgressBar
-        init{
-            restaurantAddress = view.findViewById(R.id.tvRestaurantAddress)
-            restaurantName = view.findViewById(R.id.tvRestaurantName)
-            restaurantImage = view.findViewById(R.id.iPlaceHolder)
-            normal = view.findViewById(R.id.iDollar2)
-            expensive = view.findViewById(R.id.iDollar3)
-            rating = view.findViewById(R.id.tvRatingProgress)
-            ratingProgress = view.findViewById(R.id.progressBar)
-        }
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view=LayoutInflater.from(parent.context).inflate(R.layout.list_item,parent,false)
@@ -71,6 +52,33 @@ class HomeAdapter(private var dataset: ArrayList<Results>): RecyclerView.Adapter
         holder.rating.text = roundValue.toString()
 
 
+    }
+
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener{
+
+        val restaurantName: TextView
+        val restaurantAddress:TextView
+        val restaurantImage: ImageView
+        val normal: ImageView
+        val expensive: ImageView
+        val rating: TextView
+        val ratingProgress: ProgressBar
+        init{
+            restaurantAddress = view.findViewById(R.id.tvRestaurantAddress)
+            restaurantName = view.findViewById(R.id.tvRestaurantName)
+            restaurantImage = view.findViewById(R.id.iPlaceHolder)
+            normal = view.findViewById(R.id.iDollar2)
+            expensive = view.findViewById(R.id.iDollar3)
+            rating = view.findViewById(R.id.tvRatingProgress)
+            ratingProgress = view.findViewById(R.id.progressBar)
+            view.setOnClickListener(this)
+        }
+
+        override fun onClick(p0: View?) {
+            val position = bindingAdapterPosition
+            val currentRestaurant = dataset[position]
+            clickHandler.clickedRestaurantItem(currentRestaurant)
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")

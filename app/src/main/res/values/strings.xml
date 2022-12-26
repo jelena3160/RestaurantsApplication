@@ -24,6 +24,12 @@
     <string name="rating">Rating</string>
     <string name="set_your_new_password">Set your new password</string>
     <string name="continue_to_login">Continue</string>
+    <string name="restaurant_image">Restaurant image</string>
+    <string name="restaurant_name">Restaurant name</string>
+    <string name="see_on_map">See on map</string>
+    <string name="get_me_there">Get me there!</string>
+    <string name="image">image</string>
+    <string name="get_more_information">Get more information</string>
 
     <string-array name="foodPreference">
         <item>Choose food preference</item>
