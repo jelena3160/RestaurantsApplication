@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -17,6 +16,7 @@
         android:background="#A7ABC6">
 
         <ImageView
+            android:contentDescription="@string/image"
             android:id="@+id/iPlaceHolder"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed"
-            android:text="Restaurant name"
+            android:text="@string/placeholder"
             android:textAllCaps="true"
             android:textColor="@color/primaryDarkColor"
             android:textSize="15sp"
@@ -48,7 +48,7 @@
             android:layout_height="21dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:text="Restaurant address"
+            android:text="@string/placeholder"
             android:textColor="@color/primaryDarkColor"
             app:layout_constraintStart_toStartOf="@+id/tvRestaurantName"
             app:layout_constraintTop_toBottomOf="@+id/tvRestaurantName" />
@@ -84,6 +84,7 @@
 
 
         <ImageView
+            android:contentDescription="@string/image"
             android:id="@+id/iLocation"
             android:layout_width="24dp"
             android:layout_height="22dp"
@@ -94,6 +95,7 @@
             app:srcCompat="@drawable/ic_baseline_near_me_24" />
 
         <ImageView
+            android:contentDescription="@string/image"
             android:id="@+id/iDollar1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -104,6 +106,7 @@
             app:srcCompat="@drawable/ic_baseline_attach_money_24" />
 
         <ImageView
+            android:contentDescription="@string/image"
             android:id="@+id/iDollar2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -113,6 +116,7 @@
             app:srcCompat="@drawable/ic_baseline_attach_money_24" />
 
         <ImageView
+            android:contentDescription="@string/image"
             android:id="@+id/iDollar3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -139,7 +143,7 @@
             android:id="@+id/tvRatingProgress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="9.21"
+            android:text="@string/placeholder2"
             android:textColor="@color/primaryLightColor"
             android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="@+id/progressBar"

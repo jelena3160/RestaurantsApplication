@@ -1,6 +1,7 @@
-package com.example.restaurants.view
+package com.example.restaurants.view.fragments
 
 import android.content.Context
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,6 +15,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.restaurants.R
 import com.example.restaurants.data.User
 import com.example.restaurants.databinding.FragmentRegisterBinding
+import com.example.restaurants.view.activities.MainActivity
 import com.example.restaurants.viewModel.RegisterViewModel
 
 class RegisterFragment : Fragment() {
@@ -49,7 +51,9 @@ class RegisterFragment : Fragment() {
 
                 insertDataToSharedPref(name,lastName,email,foodPreference)
                 insertDataToDatabase(name, lastName,email,password,foodPreference)
-                findNavController().navigate(R.id.action_registerFragment_to_mainFragment)
+                val intent = Intent(requireContext(), MainActivity::class.java)
+                startActivity(intent)
+                requireActivity().finish()
             }
         }
     }

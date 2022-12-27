@@ -1,4 +1,4 @@
-package com.example.restaurants.view
+package com.example.restaurants.view.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,6 @@ import android.os.Handler
 import android.view.animation.AnimationUtils
 import com.example.restaurants.R
 import kotlinx.android.synthetic.main.activity_splash_screen.*
-import kotlinx.coroutines.delay
 
 @Suppress("DEPRECATION")
 class SplashScreenActivity : AppCompatActivity() {
@@ -44,7 +43,7 @@ class SplashScreenActivity : AppCompatActivity() {
         }, 2400)
 
         Handler().postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }, 3400)

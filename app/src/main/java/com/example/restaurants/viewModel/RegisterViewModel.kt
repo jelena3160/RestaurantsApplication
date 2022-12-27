@@ -1,8 +1,6 @@
 package com.example.restaurants.viewModel
 
 import android.app.Application
-import android.content.Context
-import android.content.SharedPreferences
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.restaurants.data.User

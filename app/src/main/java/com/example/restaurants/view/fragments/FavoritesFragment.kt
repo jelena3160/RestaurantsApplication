@@ -1,4 +1,4 @@
-package com.example.restaurants.view
+package com.example.restaurants.view.fragments
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -24,7 +24,7 @@ class FavoritesFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentFavoritesBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -32,32 +32,36 @@ class FavoritesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         viewModel = ViewModelProvider(this)[FavoritesViewModel::class.java]
-        val preference = StringBuilder()
-        preference.append("cuisine-")
-        preference.append(viewModel.getFoodPreference())
-        viewModel.getUpdatedText("Paris",preference.toString())
+
+        val preference = getPreference()
+        viewModel.getUpdatedText("Paris",preference)
         addRecycleView()
         setToolbar()
 
     }
 
     private fun addRecycleView(){
-        var adapter = FavoritesAdapter(dataset)
-
+        val adapter = FavoritesAdapter(dataset)
         viewModel.uiTextLiveData.observe(viewLifecycleOwner) { updatedActivity ->
             adapter.updateUserList(updatedActivity.results)
+            binding.lottieFavorites.visibility = View.GONE
         }
         binding.rvFavorites.setHasFixedSize(true)
         binding.rvFavorites.adapter = adapter
         binding.rvFavorites.layoutManager = LinearLayoutManager(requireContext())
-
     }
 
     private fun setToolbar(){
         requireActivity().setActionBar(binding.toolbar)
         requireActivity().actionBar?.setDisplayShowHomeEnabled(true)
         requireActivity().actionBar?.title = "Favorites"
+    }
+
+    private fun getPreference(): String {
+        val preference = StringBuilder()
+        preference.append("cuisine-")
+        preference.append(viewModel.getFoodPreference())
+        return preference.toString()
     }
 }

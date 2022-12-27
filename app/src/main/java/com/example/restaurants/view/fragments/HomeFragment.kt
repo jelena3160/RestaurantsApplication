@@ -1,8 +1,7 @@
-package com.example.restaurants.view
+package com.example.restaurants.view.fragments
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.restaurants.R
-import com.example.restaurants.RestaurantClickHandler
+import com.example.restaurants.handler.RestaurantClickHandler
 import com.example.restaurants.adapter.HomeAdapter
 import com.example.restaurants.databinding.FragmentHomeBinding
 import com.example.restaurants.model.json.Results
@@ -50,6 +49,7 @@ class HomeFragment : Fragment(), RestaurantClickHandler {
         val adapter = HomeAdapter(dataset, this)
         viewModel.uiTextLiveData.observe(viewLifecycleOwner) { updatedActivity ->
             adapter.updateUserList(updatedActivity.results)
+            binding.lottieHome.visibility = View.GONE
         }
         binding.rvHome.setHasFixedSize(true)
         binding.rvHome.adapter = adapter
@@ -59,12 +59,12 @@ class HomeFragment : Fragment(), RestaurantClickHandler {
     }
 
     override fun clickedRestaurantItem(restaurantsResponse: Results) {
-        var bundle = packInfo(restaurantsResponse)
+        val bundle = packInfo(restaurantsResponse)
         findNavController().navigate(R.id.action_mainFragment_to_detailsFragment, bundle)
     }
 
     private fun packInfo(results: Results): Bundle{
-        var bundle = Bundle()
+        val bundle = Bundle()
         bundle.putString("name", results.name)
         bundle.putString("location", results.locationId)
         bundle.putString("snippet", results.snippet)

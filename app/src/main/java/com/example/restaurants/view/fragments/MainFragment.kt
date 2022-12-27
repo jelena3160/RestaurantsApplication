@@ -1,4 +1,4 @@
-package com.example.restaurants.view
+package com.example.restaurants.view.fragments
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -11,10 +11,6 @@ import com.example.restaurants.viewModel.MainViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = MainFragment()
-    }
 
     private lateinit var viewModel: MainViewModel
 

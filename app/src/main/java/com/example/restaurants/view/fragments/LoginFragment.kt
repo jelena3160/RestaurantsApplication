@@ -1,6 +1,7 @@
-package com.example.restaurants.view
+package com.example.restaurants.view.fragments
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.lifecycle.*
 import androidx.navigation.fragment.findNavController
 import com.example.restaurants.R
 import com.example.restaurants.databinding.FragmentLoginBinding
+import com.example.restaurants.view.activities.MainActivity
 import com.example.restaurants.viewModel.LoginViewModel
 
 
@@ -40,6 +42,12 @@ class LoginFragment : Fragment() {
             requireActivity().getSharedPreferences("UserInfoPref", Context.MODE_PRIVATE)
         val editor = sharedPref.edit()
 
+        if(sharedPref.contains("usrName")){
+            val intent = Intent(requireContext(), MainActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
+
         binding.tvJoinNow.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
@@ -56,9 +64,10 @@ class LoginFragment : Fragment() {
                             putString("foodPreference", it.restaurantPreference)
                             apply()
                         }
-                        if (findNavController().currentDestination?.id == R.id.loginFragment) {
-                            findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
-                        }
+                        val intent = Intent(requireContext(), MainActivity::class.java)
+                        startActivity(intent)
+                        requireActivity().finish()
+
                     } else
                         Toast.makeText(requireContext(), "Incorrect email or password", Toast.LENGTH_LONG).show()
                 })
@@ -68,7 +77,7 @@ class LoginFragment : Fragment() {
         binding.tvForgotPassword.setOnClickListener {
             if(android.util.Patterns.EMAIL_ADDRESS.matcher(binding.etEmail.text.toString()).matches()) {
                 bundle.putString("email", binding.etEmail.text.toString())
-                findNavController().navigate(R.id.action_loginFragment_to_resetPassordFragment, bundle)
+                findNavController().navigate(R.id.action_loginFragment_to_resetPasswordFragment, bundle)
             }
         }
     }

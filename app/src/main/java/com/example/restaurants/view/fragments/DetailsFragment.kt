@@ -1,25 +1,16 @@
-package com.example.restaurants.view
+package com.example.restaurants.view.fragments
 
 import android.content.Intent
 import android.net.Uri
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.content.res.AppCompatResources
-import androidx.appcompat.widget.Toolbar
-import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
-import com.example.restaurants.R
 import com.example.restaurants.databinding.FragmentDetailsBinding
-import com.example.restaurants.databinding.FragmentFavoritesBinding
 import com.example.restaurants.viewModel.DetailsViewModel
-import com.example.restaurants.viewModel.FavoritesViewModel
-import kotlinx.android.synthetic.main.fragment_details.*
-import java.net.URL
 
 class DetailsFragment : Fragment() {
 
@@ -31,7 +22,7 @@ class DetailsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentDetailsBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -42,7 +33,6 @@ class DetailsFragment : Fragment() {
 
         setToolbar()
         unpackInfo()
-
 
         val latitude = requireArguments().getDouble("latitude")
         val longitude = requireArguments().getDouble("longitude")
@@ -71,7 +61,6 @@ class DetailsFragment : Fragment() {
         requireActivity().actionBar?.setDisplayShowHomeEnabled(true)
         requireActivity().actionBar?.setDisplayHomeAsUpEnabled(true)
         requireActivity().actionBar?.title = "Details"
-
     }
 
     private fun unpackInfo(){
@@ -79,7 +68,6 @@ class DetailsFragment : Fragment() {
         binding.tvName.text = requireArguments().getString("name")
         binding.tvLocationD.text = requireArguments().getString("location")
         binding.tvSnippet.text = requireArguments().getString("snippet")
-
     }
 
 

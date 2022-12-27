@@ -1,4 +1,4 @@
-package com.example.restaurants.view
+package com.example.restaurants.view.fragments
 
 import android.app.Activity
 import android.content.Intent
@@ -18,12 +18,12 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.navigation.fragment.findNavController
 import com.example.restaurants.R
 import com.example.restaurants.data.FoodPreference
 import com.example.restaurants.data.UserLastName
 import com.example.restaurants.data.UserName
 import com.example.restaurants.databinding.FragmentAboutBinding
+import com.example.restaurants.view.activities.LoginActivity
 import com.example.restaurants.viewModel.AboutViewModel
 import kotlinx.android.synthetic.main.fragment_about.*
 
@@ -54,9 +54,6 @@ class AboutFragment : Fragment() {
         initialize()
         setToolbar()
 
-
-        // Uploading image from library
-        // TODO Save image to database in order to stay
         binding.iAddProfilePic.setOnClickListener {
             if(ContextCompat.checkSelfPermission(requireContext(),android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(
@@ -67,6 +64,7 @@ class AboutFragment : Fragment() {
                 startActivityForResult(galleryIntent, 2)
             }
         }
+
         var saveIcon = false
         binding.iNameChanger.setOnClickListener {
             if(!saveIcon) {
@@ -114,7 +112,8 @@ class AboutFragment : Fragment() {
 
         binding.btnLogout.setOnClickListener{
             viewModel.clearData()
-            findNavController().navigate(R.id.action_mainFragment_to_loginFragment)
+            val intent = Intent(requireContext(),LoginActivity::class.java)
+            startActivity(intent)
         }
 
     }

@@ -9,15 +9,13 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.restaurants.R
 import com.example.restaurants.model.json.Results
 import java.math.RoundingMode
 import java.text.DecimalFormat
 import kotlin.math.roundToInt
 
-    class FavoritesAdapter(private var dataset: ArrayList<Results>): RecyclerView.Adapter<FavoritesAdapter.ViewHolder>(){
-
+class FavoritesAdapter(private var dataset: ArrayList<Results>): RecyclerView.Adapter<FavoritesAdapter.ViewHolder>(){
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
 
@@ -66,15 +64,12 @@ import kotlin.math.roundToInt
         val progress = (roundValue.times(10)).roundToInt()
         holder.ratingProgress.progress = progress
         holder.rating.text = roundValue.toString()
-
-
     }
 
     @SuppressLint("NotifyDataSetChanged")
     fun updateUserList(datasetNew: ArrayList<Results>) {
         dataset.clear()
         dataset = datasetNew
-
         notifyDataSetChanged()
     }
 

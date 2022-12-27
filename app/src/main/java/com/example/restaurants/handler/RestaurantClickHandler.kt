@@ -1,4 +1,4 @@
-package com.example.restaurants
+package com.example.restaurants.handler
 
 import com.example.restaurants.model.json.Results
 

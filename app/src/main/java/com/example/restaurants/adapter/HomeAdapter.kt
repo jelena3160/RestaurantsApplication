@@ -11,7 +11,7 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.restaurants.R
-import com.example.restaurants.RestaurantClickHandler
+import com.example.restaurants.handler.RestaurantClickHandler
 import com.example.restaurants.model.json.Results
 import java.math.RoundingMode
 import java.text.DecimalFormat
@@ -50,12 +50,9 @@ class HomeAdapter(private var dataset: ArrayList<Results>, private val clickHand
         val progress = (roundValue.times(10)).roundToInt()
         holder.ratingProgress.progress = progress
         holder.rating.text = roundValue.toString()
-
-
     }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener{
-
         val restaurantName: TextView
         val restaurantAddress:TextView
         val restaurantImage: ImageView

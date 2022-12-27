@@ -6,9 +6,6 @@ import com.example.restaurants.data.User
 import com.example.restaurants.data.UserDao
 import com.example.restaurants.data.UserDatabase
 import com.example.restaurants.data.UserRepository
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class LoginViewModel(application: Application) : AndroidViewModel(application) {

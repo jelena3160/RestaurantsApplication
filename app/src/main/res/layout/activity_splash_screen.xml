@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
     <ImageView
+        android:contentDescription="@string/image"
         android:id="@+id/iSushi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,6 +22,7 @@
         app:srcCompat="@drawable/sushi" />
 
     <ImageView
+        android:contentDescription="@string/image"
         android:id="@+id/iDessert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,6 +34,7 @@
         app:srcCompat="@drawable/dessert" />
 
     <ImageView
+        android:contentDescription="@string/image"
         android:id="@+id/iIndian"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,6 +46,7 @@
         app:srcCompat="@drawable/biryani" />
 
     <ImageView
+        android:contentDescription="@string/image"
         android:id="@+id/iPizza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,6 +58,7 @@
         app:srcCompat="@drawable/pizza" />
 
     <ImageView
+        android:contentDescription="@string/image"
         android:id="@+id/iThai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

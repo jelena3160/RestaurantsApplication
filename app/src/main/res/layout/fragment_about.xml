@@ -53,6 +53,7 @@
         app:srcCompat="@drawable/add_profile_picture" />
 
     <EditText
+        android:hint="@string/first_name"
         android:id="@+id/etNameAbout"
         android:layout_width="250dp"
         android:layout_height="40dp"
@@ -108,6 +109,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etEmailAbout" />
 
     <ImageView
+        android:contentDescription="@string/image"
         android:id="@+id/iNameChanger"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -119,6 +121,7 @@
         app:srcCompat="@drawable/marker" />
 
     <ImageView
+        android:contentDescription="@string/image"
         android:id="@+id/iLastNameChanger"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -130,6 +133,7 @@
         app:srcCompat="@drawable/marker" />
 
     <ImageView
+        android:contentDescription="@string/image"
         android:id="@+id/iFoodPreferenceChanger"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
